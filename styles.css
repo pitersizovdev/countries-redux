@@ -1,150 +1,109 @@
-/**
-  Нормализация блочной модели
- */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
-
-/**
-  Убираем внутренние отступы слева тегам списков,
-  у которых есть атрибут class
- */
-:where(ul, ol):where([class]) {
-  padding-left: 0;
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
 }
-
-/**
-  Убираем внешние отступы body и двум другим тегам,
-  у которых есть атрибут class
- */
-body,
-:where(blockquote, figure):where([class]) {
-  margin: 0;
+body {font-family: "Mulish", sans-serif;
+	line-height: 1;
 }
-
-/**
-  Убираем внешние отступы вертикали нужным тегам,
-  у которых есть атрибут class
- */
-:where(
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  ul,
-  ol,
-  dl
-):where([class]) {
-  margin-block: 0;
+ol, ul {
+	list-style: none;
 }
-
-:where(dd[class]) {
-  margin-left: 0;
+blockquote, q {
+	quotes: none;
 }
-
-:where(fieldset[class]) {
-  margin-left: 0;
-  padding: 0;
-  border: none;
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
 }
-
-/**
-  Убираем стандартный маркер маркированному списку,
-  у которого есть атрибут class
- */
-:where(ul[class]) {
-  list-style: none;
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
+/* HTML5 display-role reset for older browsers */
 
-/**
-  Обнуляем вертикальные внешние отступы параграфа,
-  объявляем локальную переменную для внешнего отступа вниз,
-  чтобы избежать взаимодействие с более сложным селектором
- */
-p {
-  --paragraphMarginBottom: 24px;
-
-  margin-block: 0;
+*{
+	font-family: 'Mulish', sans-serif;
 }
-
-/**
-  Внешний отступ вниз для параграфа без атрибута class,
-  который расположен не последним среди своих соседних элементов
- */
-p:where(:not([class]):not(:last-child)) {
-  margin-bottom: var(--paragraphMarginBottom);
+header{
+	font-size: 16px;
+	height: 100vh;
+	background-image: url('./img/bg1.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	color: #fff;
 }
-
-
-/**
-  Упрощаем работу с изображениями
- */
-img {
-  display: block;
-  max-width: 100%;
+b {
+	font-weight: bold;
 }
-
-/**
-  Наследуем свойства шрифт для полей ввода
- */
-input,
-textarea,
-select,
-button {
-  font: inherit;
+.headernav {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0em 4em;
+	top: 2em;
 }
-
-html {
-  /**
-    Пригодится в большинстве ситуаций
-    (когда, например, нужно будет "прижать" футер к низу сайта)
-   */
-  height: 100%;
-  /**
-    Плавный скролл
-   */
-  scroll-behavior: smooth;
+.headerlogo {
+	display: flex;
+	align-items: center;
+	gap: 1em;
 }
-
-body {
-  /**
-    Пригодится в большинстве ситуаций
-    (когда, например, нужно будет "прижать" футер к низу сайта)
-   */
-  min-height: 100%;
-  /**
-    Унифицированный интерлиньяж
-   */
-  line-height: 1.5;
+.logo1 {
+	width: 5em;
 }
-
-/**
-  Приводим к единому цвету svg-элементы
- */
-svg *[fill] { fill: currentColor }
-svg *[stroke] { stroke: currentColor }
-
-/**
-  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
- */
-svg * {
-  transition-property: fill, stroke;
+.logo2 {
+	height: 1em;
 }
+nav ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5em;
+	font-size: 1.5em;
 
-/**
-  Удаляем все анимации и переходы для людей,
-  которые предпочитают их не использовать
- */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+}
+.dost5000{
+	font-size: 1.5em;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	right: 0;
+	margin: 10em 5em;
+	gap: 1em;
+}
+.dost{
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	bottom: 0;
+	margin: 10em 5em;
+	gap: 1em;
+}
+.dost h1{
+	font-size: 2.5em;
+	text-transform: uppercase;
+	font-weight: 800;
+}
+.dost h2{
+	font-size: 1.5em;
 }
