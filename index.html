@@ -15,8 +15,8 @@
 </head>
 <body>
     <header>
-        <nav class="headernav">
-            <div class="headerlogo">            
+        <nav class="header-nav">
+            <div class="header-logo">            
                 <img class="logo1" src="./img/logo1.svg"/>
                 <img class="logo2" src="./img/logo2.svg"/>
             </div>
@@ -27,38 +27,46 @@
             </ul>
         </nav>
         
-        <span class="dost5000"><img src='./icons/cake.png'/><p>Бесплатная доставка <b>от 5000 рублей</b></p></span>
+        <span><img src='./icons/cake.png'/><p>Бесплатная доставка <b>от 5000 рублей</b></p></span>
         <div class="dost">
             <h1>привезем любой кондитерский<br> инвентарь в течение 2-х часов</h1>
             <h2>Работаем круглосуточно на самовывоз и доставку на дом</h2>
         </div>
-
     </header>
 
-    <section>
-        <h1></h1>
-        <div>
-            <div>
-                <span></span>
-                <p></p>
+    <section class="services">
+        <h1>наши услуги</h1>
+        <div class="services-column">
+            <div class="service-description">
+                <span>01</span>
+                <p>Мы знаем, что в момент выпечки может не вовремя закончиться нужный продукт или сломаться инвентарь, но вы можете обратиться 
+                    к нам и получить всё, что необходимо в кратчайшие сроки
+                </p>
             </div>
-            <div>
-                <span></span>
-                <p></p>
+            <div class="service-description">
+                <span>02</span>
+                <p>
+                    Мы можем распечатать на пищевой бумаге с пищевыми красителями любую картинку. 
+                    Ведь пищевая печать — это один из самых популярных способов сделать уникальный декор на десерте
+                </p>
             </div>
         </div>
     </section>
 
-    <section>
-        <span><img/><p></p></span>
-        <h1></h1>
-        <form>
-            <input/>
-            <input/>
-            <input/>
-            <button></button>
-            <input type="checkbox"/>
-        </form>
+    <section class="contact">
+        <span><img src='./icons/cake.png'/>Это нужно, чтобы получить информацию о наличии товара или его доставке</p></span>
+        <div class="form-container">
+            <h1>оставьте свои данные, а мы с вами <br> свяжемся в течение 15 минут</h1>
+            <div class="form-card">
+                <form>
+                    <input type="text" placeholder="Ваше имя"/>
+                    <input type="email" placeholder="Ваша почта"/>
+                    <input type="text" placeholder="&#9742 Номер телефона"/>
+                    <button>Оставить заявку</button>
+                </form>
+                <div class="check"><input type="checkbox"><label for="check">Нажамая на кнопку, вы соглашаетесь с условиями обработки персональных данных</label></input></div>
+            </div>
+        </div>
     </section>
 
     
