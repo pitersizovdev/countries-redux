@@ -48,6 +48,9 @@ table {
 *{
 	font-family: 'Mulish', sans-serif;
 }
+body::-webkit-scrollbar {
+	display: none;
+}
 header{
 	font-size: 16px;
 	height: 100vh;
@@ -90,8 +93,8 @@ header span{
 	position: absolute;
 	display: flex;
 	align-items: center;
-	right: 0;
-	margin: 10em 5em;
+	right: 5em;
+	top: 15em;
 	gap: 1em;
 }
 .dost{
@@ -119,7 +122,7 @@ header span{
 	gap: 3em;
 	font-size: 16px;
 	background-color: #fff;
-	padding: 4em 5em;
+	padding: 3em 5em 7em 5em;
 }
 .services h1{
 	color: #F380A1;
@@ -144,6 +147,7 @@ header span{
 }
 .service-description p{
 	font-size: 1.25em;
+	color: #280B20;
 }
 
 
@@ -151,33 +155,34 @@ header span{
 .contact {
 	position: relative;
 	font-size: 16px;
-	height: 100%;
+	height: 80vh;
 	background-image: url('./img/bg2.png');
 	background-repeat: no-repeat;
-	background-size: 100%;
+	background-size:cover;
 	color: #fff;
-	display: flex;
-	flex-direction: column;
+	padding: 2em 5em;
   }
   .contact span {
 	font-size: 1.5em;
 	position: absolute;
 	display: flex;
 	align-items: center;
-	right: 0;
+	right: 3em;
+	top: 10em;
 	gap: 1em;
 	width: 24.5em;
   }
   
   .form-container {
-	position: relative;
-	bottom: 0;
+	position: absolute;
+	bottom: 6em;
   }
   
   .form-container h1 {
 	font-size: 2.5em;
 	font-weight: 700;
 	text-transform: uppercase;
+	line-height: 1.2em;
   }
   
   .form-card {
@@ -186,34 +191,40 @@ header span{
 	flex-direction: column;
 	border-radius: 1.5em;
 	background-color: #fff;
-	padding: 2em 4em;
+	padding: 1em 3em;
 	margin-top: 3em;
+	width: 95%;
+  }
+  .form-card {
 	box-shadow: 4px 4px 19px #C241667D;
   }
   
   form {
 	display: flex;
 	align-items: center;
+	margin: auto;
+	gap: 2em;
+	margin-top: 0.5em;
   }
   
   label {
 	color: #7e868e;
   }
   form input {
-	font-size: 2em;
+	font-size: 1.5em;
 	background-color: #fde4ea;
 	border: none;
-	border-radius: 1.2em;
-	padding: 1em;
+	border-radius: .6em;
+	padding: 1em 2em;
 	margin-top: 1em;
   }
   form button {
-	font-size: 2em;
+	font-size: 1.5em;
 	background-color: #F380A1;
 	color: #fff;
 	border: none;
-	border-radius: 1.2em;
-	padding: 1em;
+	border-radius: .6em;
+	padding: 1em 3em;
 	margin-top: 1em;
   }
   
