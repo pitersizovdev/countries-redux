@@ -237,14 +237,15 @@ header span{
 	margin-top: 1em;
   }
   form button {
-	font-size: 1.5em;
-	background-color: #F380A1;
-	color: #fff;
-	border: none;
-	border-radius: .6em;
-	padding: 1em 3em;
-	margin-top: 1em;
-  }
+	width: 15em;
+    font-size: 1.5em;
+    background-color: #F380A1;
+    color: #fff;
+    border: none;
+    border-radius: .6em;
+    padding: 1em 3em;
+    margin-top: 1em;
+}
   .check {
 	display: flex;
 	justify-content: center;

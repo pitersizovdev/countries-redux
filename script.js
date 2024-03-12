@@ -52,3 +52,26 @@ function isInViewport(element) {
     );
 }
 
+
+// Отправка почты с проверкой на заполненные поля и чекбокс
+function sendEmail(event) {
+    event.preventDefault(); // Предотвращаем стандартное поведение отправки формы
+
+    if (document.getElementById('check').checked && document.getElementById('name').value && document.getElementById('email').value && document.getElementById('phone').value) {
+        document.getElementById('button').textContent = "Отправка ..."; // Изменяем текст на кнопке на "Отправка..."
+
+        let params = {
+            name: document.querySelector("#name").value,
+            email: document.querySelector("#email").value,
+            phone: document.querySelector("#phone").value,
+        }
+
+        emailjs.send("service_m64mydc","template_qd7jqwo",params).then(function() {
+            alert("Ваша заявка успешно отправлена!");
+            document.getElementById('button').textContent = "Оставить заявку"; // Возвращаем исходный текст кнопки после отправки
+        });
+    } else {
+        alert("Пожалуйста, поставьте галочку согласия.");
+    }
+}
+

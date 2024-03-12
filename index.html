@@ -59,16 +59,19 @@
         <div class="form-container">
             <h1>оставьте свои данные, а мы с вами <br> свяжемся в течение 15 минут</h1>
             <div class="form-card">
-                <form id="contact-form">
-                    <input type="text" placeholder="Ваше имя"/>
-                    <input type="email" placeholder="Ваша почта"/>
-                    <input type="text" placeholder="&#9742 Номер телефона"/>
-                    <button>Оставить заявку</button>
+                <form id="contact-form" onsubmit="sendEmail(event)">
+                    <input type="text" placeholder="Ваше имя" id="name" name="name" required>
+                    <input type="email" placeholder="Ваша почта" id="email" name="email" required>
+                    <input type="text" placeholder="&#9742 Номер телефона" id="phone" name="phone" required>
+                    <button  type="submit" id="button">Оставить заявку</button>
                 </form>
-                <div class="check"><input type="checkbox"><label for="check">Нажамая на кнопку, вы соглашаетесь с условиями обработки персональных данных</label></input></div>
+                <div class="check">
+                    <input type="checkbox" id="check"><label for="check">Нажамая на кнопку, вы соглашаетесь с условиями обработки персональных данных</label></input>
+                </div>
             </div>
         </div>
     </section>
+    
 
     
     <section class="primes">
@@ -162,5 +165,15 @@
 <script src="https://unpkg.com/gsap@3.9.1/dist/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "-AoxajydB39rDgEZA",
+      });
+   })();
+</script>
+
 <script src="script.js"></script>
 </html>
