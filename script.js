@@ -17,6 +17,7 @@ gsap.from(".form-container", {
         trigger: ".form-container",
         start: "top 80%",
         end: "top 50%",
+        once: true  // Анимация будет срабатывать только один раз
     }
 });
 
@@ -27,9 +28,10 @@ gsap.from(".contact h1", {
     ease: "power2.out",
     delay: 1,
     scrollTrigger: {
-        trigger: ".form-container",
+        trigger: ".contact",
         start: "top 80%",
         end: "top 50%",
+        once: true
     }
 });
 
@@ -40,9 +42,10 @@ gsap.from(".form-card", {
     ease: "power2.out",
     delay: 0.5,
     scrollTrigger: {
-        trigger: ".form-container",
+        trigger: ".form-card",
         start: "top 80%",
         end: "top 50%",
+        once: true
     }
 });
 
@@ -52,9 +55,10 @@ gsap.from(".contact span", {
     opacity: 0,
     delay: 0.5,
     scrollTrigger: {
-        trigger: ".form-container",
+        trigger: ".contact span",
         start: "top 80%",
         end: "top 50%",
+        once: true
     }
 });
 
@@ -65,9 +69,10 @@ gsap.from("button", {
     ease: "power2.out",
     delay: 1,
     scrollTrigger: {
-        trigger: ".form-container",
+        trigger: "button",
         start: "top 80%",
         end: "top 50%",
+        once: true
     }
 });
 
@@ -76,11 +81,12 @@ gsap.from(".check", {
     y: 50,
     opacity: 0,
     ease: "power2.out",
-    delay:1.5,
+    delay: 1.5,
     scrollTrigger: {
-        trigger: ".form-container",
+        trigger: ".check",
         start: "top 80%",
         end: "top 50%",
+        once: true
     }
 });
 
