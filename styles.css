@@ -47,6 +47,7 @@ table {
 
 html {
     scroll-behavior: smooth;
+	min-width: 1920px;
 }
 *{
 	font-family: 'Mulish', sans-serif;
@@ -189,7 +190,7 @@ header span{
   }
   
   .form-container {
-	padding: 30em 0 5em 0;
+	padding: 30em 0 10em 0;
 
 	
   }
