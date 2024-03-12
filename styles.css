@@ -84,10 +84,23 @@ b {
 nav ul {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 5em;
+	gap: 3em;
 	font-size: 1.5em;
-
 }
+nav ul a{
+	text-decoration: none;
+	color: inherit;
+	padding: 0.25em 0.8em;
+	border: none;
+	border-radius: 4em;
+}
+
+nav ul li a:hover {
+	background-color: #FFB1C8;
+	color: #280B20;
+	transition: all 0.3s ease-in-out;
+  }
+
 header span{
 	font-size: 1.5em;
 	position: absolute;

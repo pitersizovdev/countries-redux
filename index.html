@@ -21,9 +21,10 @@
                 <img class="logo2" src="./img/logo2.svg"/>
             </div>
             <ul>
-                <li>О нас</li>
-                <li>Каталог</li>
-                <li>Контакты</li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#dost">Доставка</a></li>
+                <li><a href="#items">Каталог</a></li>
+                <li><a href="#contact">Контакты</a></li>
             </ul>
         </nav>
         
@@ -34,7 +35,7 @@
         </div>
     </header>
 
-    <section class="services">
+    <section class="services" id="about">
         <h1>наши услуги</h1>
         <div class="services-column">
             <div class="service-description">
@@ -53,12 +54,12 @@
         </div>
     </section>
 
-    <section class="contact">
+    <section class="contact" id="dost">
         <span><img src='./icons/cake.png'/>Это нужно, чтобы получить информацию о наличии товара или его доставке</p></span>
         <div class="form-container">
             <h1>оставьте свои данные, а мы с вами <br> свяжемся в течение 15 минут</h1>
             <div class="form-card">
-                <form>
+                <form id="contact-form">
                     <input type="text" placeholder="Ваше имя"/>
                     <input type="email" placeholder="Ваша почта"/>
                     <input type="text" placeholder="&#9742 Номер телефона"/>
@@ -88,7 +89,7 @@
         </div>
     </section>
 
-    <section class="items">
+    <section class="items" id="items">
         <h1>популярные позиции</h1>
         <div class="items-slider">
             <div class="item-card">
@@ -129,7 +130,7 @@
         </div>
     </section>
 
-    <section class="location">
+    <section class="location" id="contact">
             <div class="left-column">
                 <h1>как нас найти</h1>
                 <h2>Адрес: Россия, 191186 <br> Санкт-Петербург, ул. Большая Морская, 18 </h2>
@@ -147,9 +148,10 @@
         </div>
         <nav class="footer-nav">
             <ul class="footer-ul">
-                <li>О нас</li>
-                <li>Каталог</li>
-                <li>Контакты</li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#dost">Доставка</a></li>
+                <li><a href="#items">Каталог</a></li>
+                <li><a href="#contact">Контакты</a></li>
             </ul>
         </nav>
         <h2>Адрес: Россия, 191186 <br> Санкт-Петербург, ул. Большая Морская, 18 </h2>
@@ -157,4 +159,11 @@
     </footer>
 
 </body>
+
+<script>
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // Ваш код для обработки формы здесь
+    });
+    </script>
 </html>
