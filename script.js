@@ -1,129 +1,45 @@
 //Анимация header 
 gsap.from(".header-logo", { duration: 1, x: -200, opacity: 0, stagger: 0.5 });
-gsap.from("ul li", { duration: 1, y: -50, opacity: 0, stagger: 0.2, delay: 0.5 });
+gsap.from("header ul li", { duration: 1, y: -50, opacity: 0, stagger: 0.2, delay: 0.5 });
 gsap.from("header span", { duration: 1, y: 50, opacity: 0, delay: 1 });
 gsap.from(".dost", { duration: 1, x: -200, opacity: 0, ease: "power2.out", delay: 1.5 });
 
 
 //Анимация формы
 gsap.registerPlugin(ScrollTrigger);
+gsap.utils.toArray('.contact').forEach(section => {
+    ScrollTrigger.create({
+        trigger: section,
+        start: "top center",
+        end: "bottom center",
+        toggleClass: "active",
 
-gsap.from(".form-container", {
-    duration: 1,
-    x: -200,
-    opacity: 0,
-    ease: "power2.out",
-    scrollTrigger: {
-        trigger: ".form-container",
-        start: "top 80%",
-        end: "top 50%",
-        once: true  // Анимация будет срабатывать только один раз
-    }
+        onEnter: () => {
+            gsap.from(section.querySelector('.form-card'), { opacity: 0, y: 50, duration: 1, delay: 0.5 });
+        }
+    });
 });
-
-gsap.from(".contact h1", {
-    duration: 1,
-    x: -200,
-    opacity: 0,
-    ease: "power2.out",
-    delay: 1,
-    scrollTrigger: {
-        trigger: ".contact",
-        start: "top 80%",
-        end: "top 50%",
-        once: true
-    }
-});
-
-gsap.from(".form-card", {
-    duration: 1,
-    x: 200,
-    opacity: 0,
-    ease: "power2.out",
-    delay: 0.5,
-    scrollTrigger: {
-        trigger: ".form-card",
-        start: "top 80%",
-        end: "top 50%",
-        once: true
-    }
-});
-
-gsap.from(".contact span", {
-    duration: 1,
-    y: 50,
-    opacity: 0,
-    delay: 0.5,
-    scrollTrigger: {
-        trigger: ".contact span",
-        start: "top 80%",
-        end: "top 50%",
-        once: true
-    }
-});
-
-gsap.from("button", {
-    duration: 1,
-    y: -50,
-    opacity: 0,
-    ease: "power2.out",
-    delay: 1,
-    scrollTrigger: {
-        trigger: "button",
-        start: "top 80%",
-        end: "top 50%",
-        once: true
-    }
-});
-
-gsap.from(".check", {
-    duration: 1,
-    y: 50,
-    opacity: 0,
-    ease: "power2.out",
-    delay: 1.5,
-    scrollTrigger: {
-        trigger: ".check",
-        start: "top 80%",
-        end: "top 50%",
-        once: true
-    }
-});
-
-
 document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    // отмена перезагрузки формы при ее отправке
+    event.preventDefault();    // отмена перезагрузки формы при ее отправке
 });
 
 
 //Анимация карточек товаров
-// Получаем все карточки товаров
-const itemCards = document.querySelectorAll('.item-card');
-
-// Скрываем все карточки
-gsap.set(itemCards, { opacity: 0, y: 50 });
-
-// Добавляем слушатель события прокрутки
-window.addEventListener("scroll", function() {
-    // Получаем элемент с id "items"
-    const itemsSection = document.getElementById("items");
-
-    // Проверяем, виден ли раздел "items" на экране
-    if (isInViewport(itemsSection)) {
-        // Анимируем появление карточек
-        itemCards.forEach((card, index) => {
+const itemCards = document.querySelectorAll('.item-card');// Получаем все карточки товаров
+gsap.set(itemCards, { opacity: 0, y: 50 }); // Скрываем все карточки
+window.addEventListener("scroll", function() { // Добавляем слушатель события прокрутки
+    const itemsSection = document.getElementById("items");    // Получаем элемент с id "items"
+    if (isInViewport(itemsSection)) {    // Проверяем, виден ли раздел "items" на экране
+        itemCards.forEach((card, index) => {         // Анимируем появление карточек
             gsap.to(card, {
                 opacity: 1,
                 y: 0,
                 duration: 1,
-                delay: index * 0.5, // Задержка для поочередного появления
+                delay: index * 0.3, // Задержка для поочередного появления
                 ease: "power2.out"
             });
         });
-
-        // Удаляем слушатель события прокрутки, чтобы анимация происходила только один раз
-        window.removeEventListener("scroll", this);
+        window.removeEventListener("scroll", this);        // Удаляем слушатель события прокрутки, чтобы анимация происходила только один раз
     }
 });
 

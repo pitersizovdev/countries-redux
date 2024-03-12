@@ -251,7 +251,6 @@ header span{
 	align-items: center;
 	margin-top: 1em;
   }
-  
 
   
   
@@ -366,6 +365,7 @@ header span{
 
 .right-column img{
 	height: 40em;
+	border-radius: 32px;
 }
 
 footer{
