@@ -1,8 +1,8 @@
 //Анимация header 
-gsap.from(".header-logo", { duration: 1, x: -200, opacity: 0, stagger: 0.5 });
-gsap.from("header ul li", { duration: 1, y: -50, opacity: 0, stagger: 0.2, delay: 0.5 });
-gsap.from("header span", { duration: 1, y: 50, opacity: 0, delay: 1 });
-gsap.from(".dost", { duration: 1, x: -200, opacity: 0, ease: "power2.out", delay: 1.5 });
+gsap.from(".header-logo", { duration: 1, x: -200, opacity: 0, stagger: 1 });
+gsap.from("header ul li", { duration: 1, y: -50, opacity: 0, stagger: 0.2, delay: 1 });
+gsap.from("header span", { duration: 1, y: 50, opacity: 0, delay: 1.5 });
+gsap.from(".dost", { duration: 1, x: -200, opacity: 0, ease: "power2.out", delay: 2 });
 
 
 //Анимация формы
