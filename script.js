@@ -12,11 +12,7 @@ gsap.from(".dost", { duration: 1, x: -200, opacity: 0, ease: "power2.out", delay
 //Анимация формы
 gsap.registerPlugin(ScrollTrigger);
 gsap.utils.toArray('.contact').forEach(section => {
-    ScrollTrigger.create({
-        trigger: section,
-        start: "top center",
-        end: "bottom center",
-        toggleClass: "active",
+    ScrollTrigger.create({trigger: section, start: "top center", end: "bottom center",toggleClass: "active",
 
         onEnter: () => {
             gsap.from(section.querySelector('.form-card'), { opacity: 0, y: 50, duration: 1, delay: 0.5 });
@@ -70,7 +66,7 @@ function sendEmail(event) {
             phone: document.querySelector("#phone").value,
         }
 
-        emailjs.send("service_m64mydc","template_qd7jqwo",params).then(function() {
+        emailjs.send("service_pnmyv1c","template_3cv48vd",params).then(function() {
             alert("Ваша заявка успешно отправлена!");
             document.getElementById('button').textContent = "Оставить заявку"; // Возвращаем исходный текст кнопки после отправки
         });
